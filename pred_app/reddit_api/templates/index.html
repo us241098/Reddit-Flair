@@ -1,0 +1,97 @@
+<html>
+
+<head>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>
+    Reddit Flair Detection
+  </title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
+  <!-- JQuery -->
+
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+
+
+</head>
+
+<br><br><br>
+
+<body style="text-align:center;  margin-left: 80px;margin-right: 80px;" id="body">
+
+  <h1 style="color:black;">
+    Reddit Flair Detection
+  </h1>
+  <br><br>
+  </div>
+
+  <form action="#" onsubmit="sendJSON()" style="text-align:center;  margin-left: 100px;margin-right: 100px;">
+    <div style="text-align:center;  margin-left: 120px;margin-right: 120px;" class="form-group">
+      <label for="inputAddress">Enter Link</label>
+      <input type="text" class="form-control" id="reddit" placeholder="org.zendesk.org">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-dark">Get Flair</button>
+  </form>
+  <!-- For printing result from server -->
+  <p class="result" style="color:black"></p>
+
+  <br><br>
+
+<script>
+  function sendJSON() {
+
+    let result = document.querySelector('.result');
+    let reddit = document.querySelector('#reddit');
+  
+    // Creating a XHR object 
+    let xhr = new XMLHttpRequest();
+    let url = "/pred";
+  
+    // open a connection 
+    xhr.open("POST", url, true);
+  
+    // Set the request header i.e. which type of content you are sending 
+    xhr.setRequestHeader("Content-Type", "application/json");
+  
+    // Create a state change callback 
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        var data = JSON.parse(xhr.response);
+        // Print received data from server 
+        result.innerHTML = data;
+  
+      }
+    };
+
+  
+    var data = JSON.stringify({
+      'text':reddit.value
+      }
+    );
+
+    console.log(data);
+    xhr.send(data);
+  
+  
+  } </script>
+
+</body>
+
+</html>

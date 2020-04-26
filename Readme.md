@@ -16,17 +16,21 @@ I have used `pushshift` [API](https://github.com/pushshift/api) instead of `PRAW
 
 
 ## EDA
-I have used `pushshift` [API](https://github.com/pushshift/api) instead of `PRAW` for this task as using this we can scrape more and older articles than using the `PRAW`. [Link](https://www.reddit.com/r/redditdev/comments/8qx7t7/why_does_praw_limit_number_of_submissions_for/) 
-  - Using `pushshift` I have scraped around ~4 lakh submissions from: January 10 2018 to April 10 2020
-  - More details in the notebook
+This includes:
+  - Length analysis
+  - Time series analysis
+  - Selecting appropriate flairs out of 214 collected flairs on basis of their count and recent trend
+  - ngram analysis
+  - Viral posts
+  - Mods of subreddit
+  - WordClouds
+  - Class distribution
 
 ## Data Cleaning and Modelling
-I have used `pushshift` [API](https://github.com/pushshift/api) instead of `PRAW` for this task as using this we can scrape more and older articles than using the `PRAW`. [Link](https://www.reddit.com/r/redditdev/comments/8qx7t7/why_does_praw_limit_number_of_submissions_for/) 
-  - Using `pushshift` I have scraped around ~4 lakh submissions from: January 10 2018 to April 10 2020
-  - More details in the notebook
-
-
-
+  - Cleaned the text by handling contraction, punctuations, URL, HTML, emojis..
+  - Initially I thought of finetuning the BERT model, but later on I realised its not possible on my GPU so I'll train it on the cloud later
+  - Implemented LSTM model w/o pretrained embeddings: test classification report in notebook
+  - Implemented LSTM model with pretrained embeddings (in progress)
 
 ## Web Service
 A web service to know the flair of the submissions is developed using flask, I have used the saved model and weights to make the predictions. It consists of 2 endpoints:

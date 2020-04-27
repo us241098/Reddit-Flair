@@ -59,6 +59,7 @@ A web service to know the flair of the submissions is developed using flask, I h
     `files = {'upload_file': open('file.txt','rb')}`
     `r = requests.post(url, files=files)` 
 - Output is in the JSON format
+- Open `pred_app` folder, install the dependencies in `requirements.txt` using `pip install -r requirements.txt`,  and run `server.py` 
 
 
 ## Deployment

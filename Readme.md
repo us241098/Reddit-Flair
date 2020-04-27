@@ -32,6 +32,25 @@ This includes:
   - Implemented LSTM model w/o pretrained embeddings: test classification report in notebook
   - Implemented LSTM model with pretrained embeddings (in progress)
 
+Test accuracy (LSTM w/o pretrained embeddings)
+
+![title](img/test_accuracy.png)
+Loss (LSTM w/o pretrained embeddings)
+
+![title](img/loss.png)
+Test accuracy (LSTM w/o pretrained embeddings)
+
+Classification Report (LSTM w/o pretrained embeddings)
+
+![title](img/class_report.png)
+
+LSTM with pretrained embeddings in Progress
+
+![title](img/w_embeddings.png)
+
+
+BERT finetune (in progress)
+
 ## Web Service
 A web service to know the flair of the submissions is developed using flask, I have used the saved model and weights to make the predictions. It consists of 2 endpoints:
   - `/`: visiting this page renders a HTML page where user can post the link of the submission and on submitting, predicted flair will be displayed. Working: Using the link entered the backend search for the post with the same URL using the `PRAW` after getting the submission we get the `selftext` and `title` from it and use the concatenated text for the prediction.

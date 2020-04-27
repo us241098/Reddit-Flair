@@ -64,5 +64,5 @@ A web service to know the flair of the submissions is developed using flask, I h
 
 ## Deployment
 ### The aforementioned service is deployed on Heroku too.
-  - `/`: https://reddit-flair-utsav.herokuapp.com/ 
+  - `/`: https://reddit-flair-utsav.herokuapp.com/?# 
   - `/automated_testing`: https://reddit-flair-utsav.herokuapp.com/automated_testing

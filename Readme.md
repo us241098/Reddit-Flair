@@ -29,24 +29,46 @@ This includes:
 ## Data Cleaning and Modelling
   - Cleaned the text by handling contraction, punctuations, URL, HTML, emojis..
   - Initially I thought of finetuning the BERT model, but later on I realised its not possible on my GPU so I'll train it on the cloud later
-  - Implemented LSTM model w/o pretrained embeddings: test classification report in notebook
-  - Implemented LSTM model with pretrained embeddings (in progress)
+  - Implemented LSTM model w/o pretrained embeddings: test classification report in notebook (used in webservice)
+  - Implemented LSTM model with pretrained embeddings 
+  - Implemented LSTM model using only `titles`
+  - Implemented BERT (training in progress)
 
 Test accuracy (LSTM w/o pretrained embeddings)
 
 ![title](img/test_accuracy.png)
+
 Loss (LSTM w/o pretrained embeddings)
 
 ![title](img/loss.png)
-Test accuracy (LSTM w/o pretrained embeddings)
 
 Classification Report (LSTM w/o pretrained embeddings)
 
 ![title](img/class_report.png)
 
-LSTM with pretrained embeddings in Progress
+Test accuracy (LSTM with pretrained embeddings)
 
-![title](img/w_embeddings.png)
+![title](img/test_accuracy_lstm_pretrained.png)
+
+Loss (LSTM with pretrained embeddings)
+
+![title](img/loss_lstm_pretrained.png)
+
+Classification Report (LSTM with pretrained embeddings)
+
+![title](img/class_lstm_pretrained.png)
+
+Test accuracy (LSTM with only Title)
+
+![title](img/test_accuracy_title.png)
+
+Loss (LSTM with only Title)
+
+![title](img/loss_title.png)
+
+Classification Report (LSTM with only Title)
+
+![title](img/class_report_title.png)
 
 
 BERT finetune (in progress)

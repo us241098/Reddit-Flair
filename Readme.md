@@ -1,7 +1,4 @@
-# MIDAS Task
-
-
-This repository contains code for MIDAS internship task. The task is divided into 5 subtasks:
+The task is divided into 5 subtasks:
 
   - Data Collection
   - EDA
